@@ -1,30 +1,53 @@
 #By LemoXiao -2017-10-23
+
 #这是一份有关扫雷的游戏程序源代码说明
+
 #源代码分为七个文件，一个主函数，附带六个功能函数
+
 #以下分别对六个文件的具体功能进行说明：
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
  ### 数据类型说明
-int[ ][ ] isMine； // 用二维数组来标记是否为雷
-int[ ][ ] isEnable; // 用二维数组来判断格子是否已经打开
-int[ ][ ] rightClick,; // 右击的循环标记格子是处于旗子到问号到原装的状态
-int[ ][ ] right; // 右击的循环标记从旗子到问号到原装的数字
-int[ ] count1, count2; // 
-JButton[ ][ ] button;//将扫雷的每一个格子都设置成一个按钮，用二维数组来表示
-JButton[ ] bon; //将主界面内的除扫雷格子以外的按钮用数组包含
-JMenuItem[ ] item;//将菜单栏里面的内容用数组包括定义
-String[ ] str; // 字符串数组包含菜单栏项目的名字
-JList<?> list;//  在Statistics 面板中的难度单选框
-JLabel[] label; // 在Statistics 面板中的所有label的集合
-BufferedWriter BW; //将文本写入字符输出流，用于文件读写record
-BufferedReader BR;//读出字符输出流，用于文件读写record
-TextField[] file; //文本域数组，用于扫雷区域的长、宽和雷数的记录和设定
-JRadioButton[ ] radio;//单选框数组，用于Options选项中难度设置的选择
-JLabel[ ] label;//标签数组，用于Option选项中难度内容的说明
+
+####int[ ][ ] isMine； // 用二维数组来标记是否为雷
+
+####int[ ][ ] isEnable; // 用二维数组来判断格子是否已经打开
+
+####int[ ][ ] rightClick,; // 右击的循环标记格子是处于旗子到问号到原装的状态
+
+####int[ ][ ] right; // 右击的循环标记从旗子到问号到原装的数字
+
+
+####int[ ] count1, count2; // 
+
+####JButton[ ][ ] button;//将扫雷的每一个格子都设置成一个按钮，用二维数组来表示
+
+####JButton[ ] bon; //将主界面内的除扫雷格子以外的按钮用数组包含
+
+####JMenuItem[ ] item;//将菜单栏里面的内容用数组包括定义
+
+####String[ ] str; // 字符串数组包含菜单栏项目的名字
+
+####JList<?> list;//  在Statistics 面板中的难度单选框
+
+####JLabel[] label; // 在Statistics 面板中的所有label的集合
+
+####BufferedWriter BW; //将文本写入字符输出流，用于文件读写record
+
+####BufferedReader BR;//读出字符输出流，用于文件读写record
+
+####TextField[] file; //文本域数组，用于扫雷区域的长、宽和雷数的记录和设定
+
+####JRadioButton[ ] radio;//单选框数组，用于Options选项中难度设置的选择
+
+####JLabel[ ] label;//标签数组，用于Option选项中难度内容的说明
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
 ## main.java
+
 ###这是运行整个程序的主函数
+
 ##Part 1:
     使用了SweepMine中的Frame（）函数，生成了一个扫雷框架实例
 
@@ -54,14 +77,18 @@ JLabel[ ] label;//标签数组，用于Option选项中难度内容的说明
 ##Part 3：
     分别设置了三个按钮的功能，分别调用了newgame（）函数，restart函数，退出时调用了record的功能函数，对数据进行记录
 
+
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 ##winpane.java
+
 ###这是通过扫雷游戏后弹出的窗口，使用的容器，流程都与failpane.java保持一致，不再多加描述
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
 ##Message.java
+
 ###这是信息窗口面板，主要是对record的信息进行读取，并且排序显示出来
+
 ##代码结构：
     class Message extends JDialog implements ActionListener, MouseListener,Runnable
         public Message(String s)
